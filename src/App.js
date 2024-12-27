@@ -6,7 +6,7 @@ import ProjectsList from "./displayProjects";
 import { useState } from "react";
 
 function App() {
-  const [currentTabId, setTabId] = useState("");
+  const [currentTabId, setTabId] = useState(TabsList[0].tabId);
 
   function onClickTab(tabId) {
     setTabId(tabId);
@@ -22,7 +22,7 @@ function App() {
     <div className="App">
       <h1> Project List </h1>
       <TabList tabslist={TabsList} onClickTab={onClickTab} />
-      <ProjectsList projectsList={projectsList} />
+      <ProjectsList projectsList={projectListTab()} />
     </div>
   );
 }
